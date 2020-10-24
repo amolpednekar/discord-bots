@@ -1,6 +1,6 @@
 const Discord = require('discord.js')
 const auth = require('../auth.json')
-const conditions = require('../constants/conditions.json')
+const conditions = require('../constants/meme-bot.json')
 const client = new Discord.Client()
 
 function init(){
