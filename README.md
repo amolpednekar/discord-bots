@@ -5,10 +5,10 @@ Create different types of discord bots
 ## Usage
 
 ### Pre-requisites
-* [Create a Discord server](./docs/pre-requisites)
-* [Create a Discord app](./docs/pre-requisites)
-* [Create a bot user for your app](./docs/pre-requisites)
-* [Authorize/invite the bot to your server](./docs/pre-requisites)
+* [Create a Discord server](./docs/pre-requisites.md)
+* [Create a Discord app](./docs/pre-requisites.md)
+* [Create a bot user for your app](./docs/pre-requisites.md)
+* [Authorize/invite the bot to your server](./docs/pre-requisites.md)
 
 ### Steps
 1. Clone this project
