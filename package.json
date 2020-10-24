@@ -2,9 +2,9 @@
   "name": "discord-bos",
   "version": "1.0.0",
   "description": "Group of discord bots",
-  "main": "bots.js",
+  "main": "bots/bot.js",
   "scripts": {
-    "start": "node bots.js",
+    "start": "nodemon",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Amol Pednekar",

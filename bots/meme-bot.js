@@ -1,19 +1,22 @@
 const Discord = require('discord.js')
-const auth = require('./auth.json')
-const conditions = require('./conditions.json')
+const auth = require('../auth.json')
+const conditions = require('../constants/conditions.json')
 const client = new Discord.Client()
 
 function init(){
+    // Post a "connected" message when the bot starts
     client.on('ready', () => {
         console.log("Connected as " + client.user.tag)
     })
     
+    // Ping-pong test
     client.on('message', receivedMessage => {
         if (receivedMessage.content === 'ping') {
             receivedMessage.reply('Pong!');
         }
     });
     
+    // Respond to user's phrases
     client.on('message', receivedMessage => {
         const messages = conditions["received-phrases"]
         const reactions = conditions["positive-reacts"]
@@ -25,13 +28,16 @@ function init(){
     
     })
     
+    // Reply whenever this bot is tagged
     client.on('message', (receivedMessage) => {
         // Prevent bot from responding to its own messages
         if (receivedMessage.author == client.user) {
             return
         }
-        var filteredMessage = receivedMessage.content.replace('<@!', '<@');
+
         // Check if the bot's user was tagged in the message
+        // We need to remove a '!' in the message, which comes if the user has a nickname
+        var filteredMessage = receivedMessage.content.replace('<@!', '<@');
         if (filteredMessage.includes(client.user.toString())) {
             // Send acknowledgement message
             receivedMessage.channel.send("What do you want from me, " +
