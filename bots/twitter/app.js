@@ -22,3 +22,17 @@ async function getRequest() {
         throw new Error ('Unsuccessful request')
     }
 }
+
+(async () => {
+
+    try {
+        // Make request
+        const response = await getRequest();
+        console.log(response)
+
+    } catch(e) {
+        console.log(e);
+        process.exit(-1);
+    }
+    process.exit();
+  })();
